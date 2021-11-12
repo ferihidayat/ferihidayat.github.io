@@ -10,7 +10,7 @@
         <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Google fonts-->
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400&display=swap" rel="stylesheet">
@@ -41,36 +41,37 @@
             </div>
         </nav>
         <!-- Call to action section-->
-        <!-- <section class="cta">
+        <section class="cta">
             <div class="cta-content">
                 <div class="container">
-                    <h3 class="text-white display-4">Start building</h3>
+                    <h3 class="text-white typewrite wrap display-4" data-period="1000" data-type='["Start building."]'>Welcome
+                    </h3>
                     <a class="btn btn-outline-light py-3 px-4 rounded-pill" href="#services">Start Now</a>
                 </div>
             </div>
-        </section> -->
-        <div class="container px-4 px-lg-5 h-100  mt-5">
-            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                <div data-aos="flip-down" class="col-lg-8 align-self-end mt-5">
-                      <img src="assets/icon.png" alt="Feri Hidayatulloh" width="150" class="rounded-circle img-thumbnail">
-                    <h2 class="text-dark font-weight-bold">Feri Hidayatulloh</h2>
-                    <hr class="divider">
-                </div>
-                <div class="col-lg-8 align-self-baseline">
-                    <p data-aos="zoom-in-down" class="text-dark mb-5">Web Developer | <a target="_blank" class="yt" href="https://www.youtube.com/channel/UC5R2L_JhbQsjC-K0jSmHEpA">Content Creator</a></p>
-                    <a data-aos="fade-left" href="#services" style="width: 200px; margin: 5px;" class="btn btn-primary text-center">
-
-                        <span class="small">Services</span>
-
-                    </a>
-                    <a data-aos="fade-right" href="#project" style="width: 200px; margin: 5px;" class="btn btn-outline-primary text-center">
-
-                        <span class="small text-dark">Project</span>
-
-                    </a>
+        </section>
+        <section id="about">
+            <div class="container">
+                <div class="row text-center">
+                    <div data-aos="flip-down" class="col-lg-12">
+                          <img src="assets/icon.png" alt="Feri Hidayatulloh" width="150" class="rounded-circle img-thumbnail">
+                        <h2 class="text-dark font-weight-bold">Feri Hidayatulloh</h2>
+                        <hr class="divider">
+                    </div>
+                    <div class="col-lg-12">
+                        <p data-aos="zoom-in-down" class="text-dark mb-5">Web Developer | <a target="_blank" class="yt" href="https://www.youtube.com/channel/UC5R2L_JhbQsjC-K0jSmHEpA">Content Creator</a></p>
+                        <a data-aos="fade-left" href="#services" style="width: 200px; margin: 5px;" class="btn btn-primary text-center">
+                            <span class="small">Services</span>
+                        </a>
+                        <a data-aos="fade-right" href="#project" style="width: 200px; margin: 5px;" class="btn btn-outline-primary text-center">
+    
+                            <span class="small text-dark">Project</span>
+    
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
         <section id="services">
             <div class="container ">
                 <div class="row align-items-center">
@@ -176,13 +177,72 @@
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-       
+        <script>
+            var TxtType = function(el, toRotate, period) {
+                this.toRotate = toRotate;
+                this.el = el;
+                this.loopNum = 0;
+                this.period = parseInt(period, 10) || 2000;
+                this.txt = '';
+                this.tick();
+                this.isDeleting = false;
+            };
+        
+            TxtType.prototype.tick = function() {
+                var i = this.loopNum % this.toRotate.length;
+                var fullTxt = this.toRotate[i];
+        
+                if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+        
+                this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+        
+                var that = this;
+                var delta = 200 - Math.random() * 100;
+        
+                if (this.isDeleting) {
+                    delta /= 2;
+                }
+        
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    delta = this.period;
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.loopNum++;
+                    delta = 500;
+                }
+        
+                setTimeout(function() {
+                    that.tick();
+                }, delta);
+            };
+        
+            window.onload = function() {
+                var elements = document.getElementsByClassName('typewrite');
+                for (var i = 0; i < elements.length; i++) {
+                    var toRotate = elements[i].getAttribute('data-type');
+                    var period = elements[i].getAttribute('data-period');
+                    if (toRotate) {
+                        new TxtType(elements[i], JSON.parse(toRotate), period);
+                    }
+                }
+                // INJECT CSS
+                var css = document.createElement("style");
+                css.type = "text/css";
+                css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+                document.body.appendChild(css);
+            };
+        </script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>   
             AOS.init(); 
-       </script>
+       </script> -->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
