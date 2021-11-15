@@ -10,12 +10,13 @@
         <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Google fonts-->
-        <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+       <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400&display=swap" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/custom.ct.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -28,8 +29,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="#project">Project</a></li>
+                        <li class="nav-item"><a style="cursor: pointer;" class="nav-link me-lg-3" onclick="about()">About</a></li>
+                        <li class="nav-item"><a style="cursor: pointer;" class="nav-link me-lg-3" onclick="services()">Services</a></li>
+                        <li class="nav-item"><a style="cursor: pointer;" class="nav-link me-lg-3" onclick="project()">Project</a></li>
                     </ul>
                     <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
                         <span class="d-flex align-items-center">
@@ -40,30 +42,41 @@
                 </div>
             </div>
         </nav>
+        <script>
+            function services(){
+                document.getElementById("services").scrollIntoView();
+            }
+            function project(){
+                document.getElementById("project").scrollIntoView();
+            }
+            function about(){
+                document.getElementById("about").scrollIntoView();
+            }
+        </script>
         <!-- Call to action section-->
         <section class="cta">
             <div class="cta-content">
                 <div class="container">
                     <h3 class="text-white typewrite wrap display-4" data-period="1000" data-type='["Start building."]'>Welcome
                     </h3>
-                    <a class="btn btn-outline-light py-3 px-4 rounded-pill" href="#services">Start Now</a>
+                    <a style="width: 150px;" class="btn btn-outline-light py-2 px-4 rounded-pill" href="#services">Start Now</a>
                 </div>
             </div>
         </section>
         <section id="about">
             <div class="container">
                 <div class="row text-center">
-                    <div data-aos="flip-down" class="col-lg-12">
+                    <div class="col-lg-12">
                           <img src="assets/icon.png" alt="Feri Hidayatulloh" width="150" class="rounded-circle img-thumbnail">
                         <h2 class="text-dark font-weight-bold">Feri Hidayatulloh</h2>
                         <hr class="divider">
                     </div>
                     <div class="col-lg-12">
-                        <p data-aos="zoom-in-down" class="text-dark mb-5">Web Developer | <a target="_blank" class="yt" href="https://www.youtube.com/channel/UC5R2L_JhbQsjC-K0jSmHEpA">Content Creator</a></p>
-                        <a data-aos="fade-left" href="#services" style="width: 200px; margin: 5px;" class="btn btn-primary text-center">
+                        <p class="text-dark mb-5">Web Developer | <a target="_blank" class="yt" href="https://www.youtube.com/channel/UC5R2L_JhbQsjC-K0jSmHEpA">Content Creator</a></p>
+                        <a href="#services" style="width: 200px; margin: 5px;" class="btn btn-primary text-center bg-rainbow">
                             <span class="small">Services</span>
                         </a>
-                        <a data-aos="fade-right" href="#project" style="width: 200px; margin: 5px;" class="btn btn-outline-primary text-center">
+                        <a href="#project" style="width: 200px; margin: 5px;" class="btn btn-outline-primary text-center bg-rainbow-outline">
     
                             <span class="small text-dark">Project</span>
     
@@ -239,10 +252,10 @@
         </script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>   
-            AOS.init(); 
-       </script> -->
+        <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script> -->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
