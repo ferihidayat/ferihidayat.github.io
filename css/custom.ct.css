@@ -1,122 +1,177 @@
-
 @-webkit-keyframes color {
-    0% {
-      background-color: #0f16f1;
-    }
-    32% {
-      background-color: #3a27e2;
-    }
-    55% {
-      background-color: #3d14d1;
-    }
-    76% {
-      background-color: #5616a0;
-    }
-    100% {
-      background-color: #5616a0;
-    }
+  0% {
+    background-color: #0f16f1;
   }
-  @-moz-keyframes color {
-    0% {
-      background-color: #0f16f1;
-    }
-    32% {
-      background-color: #3a27e2;
-    }
-    55% {
-      background-color: #3d14d1;
-    }
-    76% {
-      background-color: #1626a0;
-    }
-    100% {
-      background-color: #5616a0;
-    }
+
+  32% {
+    background-color: #3a27e2;
   }
-  @keyframes color {
-    0% {
-      background-color: #0f16f1;
-    }
-    32% {
-      background-color: #3a27e2;
-    }
-    55% {
-      background-color: #3d14d1;
-    }
-    76% {
-      background-color: #7216a0;
-    }
-    100% {
-      background-color: #5616a0;
-    }
+
+  55% {
+    background-color: #3d14d1;
   }
-  
+
+  76% {
+    background-color: #5616a0;
+  }
+
+  100% {
+    background-color: #5616a0;
+  }
+}
+
+@-moz-keyframes color {
+  0% {
+    background-color: #0f16f1;
+  }
+
+  32% {
+    background-color: #3a27e2;
+  }
+
+  55% {
+    background-color: #3d14d1;
+  }
+
+  76% {
+    background-color: #1626a0;
+  }
+
+  100% {
+    background-color: #5616a0;
+  }
+}
+
+@keyframes color {
+  0% {
+    background-color: #0f16f1;
+  }
+
+  32% {
+    background-color: #3a27e2;
+  }
+
+  55% {
+    background-color: #3d14d1;
+  }
+
+  76% {
+    background-color: #7216a0;
+  }
+
+  100% {
+    background-color: #5616a0;
+  }
+}
 
 
 
-  .bg-rainbow{
-    background-color: #530ff1;
-    -webkit-animation: color 5s ease-in 0s infinite alternate running;
-    -moz-animation: color 5s linear 0s infinite alternate running;
-    animation: color 5s linear 0s infinite alternate running;
-  }
+
+.bg-rainbow {
+  background-color: #530ff1;
+  -webkit-animation: color 5s ease-in 0s infinite alternate running;
+  -moz-animation: color 5s linear 0s infinite alternate running;
+  animation: color 5s linear 0s infinite alternate running;
+}
 
 
-  @-webkit-keyframes coloroutline {
-    0% {
-      border-color: #0f16f1;
-    }
-    32% {
-      border-color: #3a27e2;
-    }
-    55% {
-      border-color: #3d14d1;
-    }
-    76% {
-      border-color: #5616a0;
-    }
-    100% {
-      border-color: #5616a0;
-    }
+@-webkit-keyframes coloroutline {
+  0% {
+    border-color: #0f16f1;
   }
-  @-moz-keyframes coloroutline {
-    0% {
-      border-color: #0f16f1;
-    }
-    32% {
-      border-color: #3a27e2;
-    }
-    55% {
-      border-color: #3d14d1;
-    }
-    76% {
-      border-color: #1626a0;
-    }
-    100% {
-      border-color: #5616a0;
-    }
+
+  32% {
+    border-color: #3a27e2;
   }
-  @keyframes coloroutline {
-    0% {
-      border-color: #0f16f1;
-    }
-    32% {
-      border-color: #3a27e2;
-    }
-    55% {
-      border-color: #3d14d1;
-    }
-    76% {
-      border-color: #7216a0;
-    }
-    100% {
-      border-color: #5616a0;
-    }
+
+  55% {
+    border-color: #3d14d1;
   }
-    
-  .bg-rainbow-outline{
-    border-color: #530ff1;
-    -webkit-animation: coloroutline 5s ease-in 0s infinite alternate running;
-    -moz-animation: coloroutline 5s linear 0s infinite alternate running;
-    animation: coloroutline 5s linear 0s infinite alternate running;
+
+  76% {
+    border-color: #5616a0;
   }
+
+  100% {
+    border-color: #5616a0;
+  }
+}
+
+@-moz-keyframes coloroutline {
+  0% {
+    border-color: #0f16f1;
+  }
+
+  32% {
+    border-color: #3a27e2;
+  }
+
+  55% {
+    border-color: #3d14d1;
+  }
+
+  76% {
+    border-color: #1626a0;
+  }
+
+  100% {
+    border-color: #5616a0;
+  }
+}
+
+@keyframes coloroutline {
+  0% {
+    border-color: #0f16f1;
+  }
+
+  32% {
+    border-color: #3a27e2;
+  }
+
+  55% {
+    border-color: #3d14d1;
+  }
+
+  76% {
+    border-color: #7216a0;
+  }
+
+  100% {
+    border-color: #5616a0;
+  }
+}
+
+.bg-rainbow-outline {
+  border-color: #530ff1;
+  -webkit-animation: coloroutline 5s ease-in 0s infinite alternate running;
+  -moz-animation: coloroutline 5s linear 0s infinite alternate running;
+  animation: coloroutline 5s linear 0s infinite alternate running;
+}
+
+.foot {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #32a2a8;
+}
+
+.containerx {
+  width: 100%;
+  height: 6px;
+  background: #cccccc;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #530ff1;
+  -webkit-animation: color 5s ease-in 0s infinite alternate running;
+  -moz-animation: color 5s linear 0s infinite alternate running;
+  animation: color 5s linear 0s infinite alternate running;
+  width: 0%;
+  /* border-radius: 3px; */
+}
+
+.text {
+  padding: 100px 0;
+}
