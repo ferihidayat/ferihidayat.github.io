@@ -1,0 +1,38 @@
+    @font-face {
+      font-family: 'Yu Gothic';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('../fonts/yugothib.ttf') format('truetype');
+    }
+
+    .border-radius-1 {
+      border-radius: 9px;
+
+    }
+
+    .carousel-img-filter {
+      filter: brightness(80%);
+    }
+
+    .img-fill {
+      object-fit: cover;
+    }
+
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background-color: #fff;
+    }
+
+    .preloader .loading {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font: 14px arial;
+    }
